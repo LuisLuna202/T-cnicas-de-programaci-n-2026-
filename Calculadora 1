@@ -1,0 +1,63 @@
+public class Calculadora
+
+{
+
+    // Atributos 
+
+    public int Numero1 { get; set; }
+    public int Numero2 { get; set; }
+
+    // Constructor
+
+    public Calculadora(int numero1, int numero2)
+    {
+        Numero1 = numero1;
+        Numero2 = numero2;
+    }
+
+    // Métodos
+
+    public int Sumar()
+    {
+        return Numero1 + Numero2;
+    }
+
+    public int Restar()
+    {
+        return Numero1 - Numero2;
+    }
+
+    public int Multiplicar()
+    {
+        return Numero1 * Numero2;
+    }
+
+    public float Division() {
+        if (Numero2 == 0)
+        {
+            Console.WriteLine("Matherror");
+            return 0;
+        }
+
+        return (float) Numero1 / Numero2;
+    }
+}
+
+class Program 
+    {
+    static void Main(string[] args)
+    {
+      
+        int numero1 = 5;
+        Console.WriteLine($"El primer numero es:{numero1}");
+        ;
+        int numero2 = 2;
+        Console.WriteLine($"El segundo numero es:{numero2}");
+        ;
+        Calculadora calculadora = new Calculadora(numero1, numero2);
+        Console.WriteLine($"Suma: {calculadora.Sumar()}");
+        Console.WriteLine($"Resta: {calculadora.Restar()}");
+        Console.WriteLine($"Multiplicación: {calculadora.Multiplicar()}");
+        Console.WriteLine($"División: {calculadora.Division()}");
+    }
+}
